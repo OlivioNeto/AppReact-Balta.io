@@ -1,11 +1,13 @@
 import React from 'react';
 import { Todo } from '../models/Todo';
 import { table } from 'console';
+import TodoListItem from './TodoListItem';
 
 const TodoList = () => {
     const todos: Todo[] = [
         {id:1, title: 'Ir ao supermercado', done: false},
         {id:2, title: 'Ir a academia', done: false},
+        {id:3, title: 'Limpar a casa', done: false},
     ];
     return (
         <table className="uk-table">
@@ -20,7 +22,7 @@ const TodoList = () => {
             <tbody>
                 {
                     todos?.map(
-                        todo => (<div key={todo.id}>{todo.title}</div>)
+                        todo => (<TodoListItem key={todo.id}></TodoListItem>)
                     )
                 }
             </tbody>
